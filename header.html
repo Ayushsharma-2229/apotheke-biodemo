@@ -1,0 +1,37 @@
+<?php
+// Get current page filename
+$currentPage = basename($_SERVER['PHP_SELF']);
+// Determine which page is active
+$homeActive = ($currentPage == 'index.php' || $currentPage == 'index.html') ? 'active' : '';
+$servicesActive = ($currentPage == 'services.php' || $currentPage == 'services.html') ? 'active' : '';
+$teamActive = ($currentPage == 'team.php' || $currentPage == 'team.html') ? 'active' : '';
+$contactActive = ($currentPage == 'contact.php' || $currentPage == 'contact.html') ? 'active' : '';
+?>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.php">
+            <img src="https://www.apotheke-bio.de/wp-content/themes/apotheke-bio-app/images/logo.svg" alt="Bio 7.0 Apotheke" height="40">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $homeActive; ?>" href="index.php" <?php echo $homeActive ? 'aria-current="page"' : ''; ?>>Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $servicesActive; ?>" href="services.php" <?php echo $servicesActive ? 'aria-current="page"' : ''; ?>>Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $teamActive; ?>" href="team.php" <?php echo $teamActive ? 'aria-current="page"' : ''; ?>>Team</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link <?php echo $contactActive; ?>" href="contact.php" <?php echo $contactActive ? 'aria-current="page"' : ''; ?>>Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
